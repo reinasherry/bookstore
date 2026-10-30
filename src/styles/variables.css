@@ -1,0 +1,19 @@
+:root {
+  /* Sage Scholar Palette */
+  --primary: #4A6B5B;
+  --primary-dark: #3A5548;
+  --secondary: #D4A373;
+  --background: #F9F6F0;
+  --surface: #FFFFFF;
+  --text-main: #2C3E35;
+  --text-muted: #7A8B82;
+  --border: #E2ECE6;
+
+  /* Typography */
+  --font-heading: 'Merriweather', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Layout */
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(44, 62, 53, 0.08);
+}
