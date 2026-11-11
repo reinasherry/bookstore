@@ -1,46 +1,7 @@
 @import "tailwindcss";
 
-/* Tailwind custom theme */
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
-
-  --color-amber-50: #fffbeb;
-  --color-amber-100: #fef3c7;
-  --color-amber-700: #b45309;
-  --color-amber-800: #92400e;
-  --color-amber-900: #78350f;
-
-  --color-warm-50: #faf8f5;
-  --color-warm-100: #f4efe6;
-  --color-warm-200: #e7dccb;
-  --color-warm-800: #3d3229;
-  --color-warm-900: #231c16;
-}
-
-/* Global reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Main website font and colors */
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #F9F6F0;
-  color: #2C3E35;
-}
-
-/* Editorial headings */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-}
-
-/* Form elements inherit the website font */
-button,
-input,
-textarea,
-select {
-  font-family: inherit;
+  --color-warm-100: #f5f0e8;
+  --color-warm-200: #e8dfd0;
+  --color-warm-900: #2b2118;
 }

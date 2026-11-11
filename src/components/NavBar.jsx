@@ -1,119 +1,112 @@
-
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import ReorderIcon from '@mui/icons-material/Reorder';
-import CloseIcon from '@mui/icons-material/Close';
-import '../styles/NavBar.css';
-import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { BookMarked, Search, Heart, ShoppingBag, Menu } from 'lucide-react';
+import '../styles/NavBar.css'; 
 
 const NavBar = () => {
-  const [openLinks, setOpenLinks] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
-const [searchTerm, setSearchTerm] = useState('');
-const [cartCount, setCartCount] = useState(0);
-const [cartTotal, setCartTotal] = useState(0);
-const [showCart, setShowCart] = useState(false);
-  const toggleNavbar = () => {
-    setOpenLinks(!openLinks);
-  };
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const closeNavbar = () => {
-    setOpenLinks(false);
+  // Placeholder states for badges
+  const [cartCount, setCartCount] = useState(0);
+  const [wishlistCount, setWishlistCount] = useState(0);
+
+  const isActive = (path) => location.pathname === path;
+
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Browse Catalog', path: '/catalog' },
+    { name: 'Services & Perks', path: '/services' },
+    { name: 'Our Story', path: '/about' },
+    { name: 'Contact & Stores', path: '/contact' },
+  ];
+
+  const handleSearchClick = () => {
+    navigate('/catalog');
+    setTimeout(() => {
+      document.getElementById('catalog-search')?.focus();
+    }, 100);
   };
 
   return (
-    <nav className="navbar">
+    <header className="main-header">
+      <div className="header-container">
+        <div className="header-top">
+          
+          {/* Logo */}
+          <Link to="/" className="header-logo">
+            <div className="logo-icon-wrapper">
+              <BookMarked size={24} />
+            </div>
+            <div>
+              <span className="logo-text">PageTurner</span>
+              <span className="logo-subtext">Curated Bookstore</span>
+            </div>
+          </Link>
 
-      
-{/* Logo / Website Name */}
-<Link to="/" className="leftSide" onClick={closeNavbar}>
+          {/* Desktop Navigation */}
+          <nav className="desktop-nav">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                to={link.path}
+                className={`nav-link ${isActive(link.path) ? 'active' : ''}`}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
 
-  <div className="logoIcon">
-    <AutoStoriesOutlinedIcon />
-  </div>
+          {/* Header Actions */}
+          <div className="header-actions">
+            <button onClick={handleSearchClick} className="icon-btn" title="Search Books">
+              <Search size={20} />
+            </button>
 
-  <div className="brandText">
-    <span className="logo">PageTurner</span>
-    <span className="title">Curated Bookstore</span>
-  </div>
+            <button className="icon-btn" title="Wishlist">
+              <Heart size={20} />
+              {wishlistCount > 0 && (
+                <span className="badge badge-rose">{wishlistCount}</span>
+              )}
+            </button>
 
-</Link>
+            <button className="cart-btn">
+              <div className="cart-icon-wrapper">
+                <ShoppingBag size={20} />
+                {cartCount > 0 && (
+                  <span className="badge badge-amber">{cartCount}</span>
+                )}
+              </div>
+              <span className="cart-total">$0.00</span>
+            </button>
 
-      
-      {/* Desktop Navigation */}
-      <div className="rightSide">
-        <div className="desktopLinks">
-  <Link to="/" className="activeLink">Home</Link>
-  <Link to="/catalog">Browse Catalog</Link>
-  <Link to="/services">Services & Perks</Link>
-  <Link to="/about">Our Story</Link>
-  <Link to="/contact">Contact & Stores</Link>
-</div>
-        <button
-  className="searchButton"
-  onClick={() => setShowSearch(!showSearch)}
-  aria-label="Open search"
->
-  <SearchIcon />
-</button>
-<Link to="/wishlist" className="wishlistButton" aria-label="Wishlist">
-  <FavoriteBorderIcon />
-</Link>
-
-<button
-  className="cartButton"
-  onClick={() => setShowCart(!showCart)}
->
-  <div className="cartIcon">
-    <ShoppingBagOutlinedIcon />
-
-    <span className="cartBadge">
-      {cartCount}
-    </span>
-  </div>
-
-  <span className="cartTotal">
-    ${cartTotal.toFixed(2)}
-  </span>
-</button>
-        {/* Mobile Hamburger Button */}
-        <button
-          className="menuButton"
-          onClick={toggleNavbar}
-          aria-label="Toggle navigation menu"
-          aria-expanded={openLinks}
-        >
-          {openLinks ? <CloseIcon /> : <ReorderIcon />}
-        </button>
-      </div>
-      {showSearch && (
-  <form className="searchBar" onSubmit={(e) => e.preventDefault()}>
-    <input
-      type="text"
-      placeholder="Search books or authors..."
-      value={searchTerm}
-      onChange={(e) => setSearchTerm(e.target.value)}
-      autoFocus
-    />
-
-    <button type="submit">
-      <SearchIcon />
-    </button>
-  </form>
-)}
-      {/* Mobile Dropdown Menu */}
-      <div className={`mobileMenu ${openLinks ? 'open' : ''}`}>
-        <Link to="/" onClick={closeNavbar}>Home</Link>
-        <Link to="/catalog" onClick={closeNavbar}>Browse Catalog</Link>
-        <Link to="/services" onClick={closeNavbar}>Services & Perks</Link>
-        <Link to="/about" onClick={closeNavbar}>Our Story</Link>
-        <Link to="/contact" onClick={closeNavbar}>Contact & Stores</Link>
+            <button 
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+              className="mobile-menu-btn"
+            >
+              <Menu size={24} />
+            </button>
+          </div>
+        </div>
       </div>
 
-    </nav>
+      {/* Mobile Dropdown Navigation */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className={`mobile-nav-link ${isActive(link.path) ? 'active' : ''}`}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
+    </header>
   );
 };
 
