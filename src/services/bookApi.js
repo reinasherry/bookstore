@@ -49,3 +49,12 @@ export async function fetchDescription(id) {
   const desc = typeof d.description === 'string' ? d.description : d.description?.value
   return desc || 'No description available for this title.'
 }
+
+export async function searchBooks(query, limit = 30) {
+  const res = await fetch(
+    `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=${limit}&fields=${FIELDS}`
+  )
+  if (!res.ok) throw new Error('Open Library request failed')
+  const data = await res.json()
+  return data.docs.filter((d) => d.cover_i).map((d) => toBook(d, 'Search results'))
+}

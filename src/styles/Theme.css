@@ -1,0 +1,135 @@
+/* ===== Toggle button ===== */
+.theme-toggle {
+  color: inherit;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* ===== Page base ===== */
+.dark body {
+  background-color: #1a1411;
+  color: #f3ece4;
+}
+
+/* ===== Announcement bar (already dark, just deepen it) ===== */
+.dark .announcement {
+  background: #451a03;
+}
+
+/* ===== Header ===== */
+.dark .header {
+  background: rgba(26, 20, 17, 0.9);
+  border-bottom-color: #4a3a2f;
+}
+.dark .logo-name {
+  color: #f3ece4;
+}
+.dark .nav-button,
+.dark .header-action,
+.dark .mobile-menu-button {
+  color: #d6c5b7;
+}
+.dark .nav-button:hover,
+.dark .header-action:hover {
+  background: #2a211b;
+}
+.dark .nav-button.active {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+}
+.dark .cart-button {
+  background: #b45309;
+}
+.dark .cart-button:hover {
+  background: #92400e;
+}
+.dark .mobile-nav {
+  background: #1a1411;
+  border-top-color: #4a3a2f;
+}
+.dark .mobile-nav-button {
+  color: #e8dfd6;
+}
+.dark .mobile-nav-button:hover {
+  background: #2a211b;
+}
+
+/* ===== Footer ===== */
+.dark .footer {
+  background: #120d0a;
+  border-top-color: #3a2d24;
+}
+.dark .footer-bottom {
+  border-top-color: #3a2d24;
+}
+.dark .social-button {
+  background: #2a211b;
+}
+
+/* ===== App.css: loading, wishlist, toast ===== */
+.dark .loading-message,
+.dark .wishlist-empty {
+  color: #a8998a;
+}
+.dark .wishlist-modal {
+  background: #2a211b;
+  color: #f3ece4;
+}
+.dark .wishlist-header {
+  border-bottom-color: #4a3a2f;
+}
+.dark .wishlist-header button {
+  color: #e8dfd6;
+}
+.dark .wishlist-book {
+  background: #1a1411;
+}
+
+/* ===== Pages (Tailwind classes) ===== */
+.dark .bg-white,
+.dark .bg-slate-50 {
+  background-color: #2a211b;
+}
+.dark .bg-warm-50,
+.dark .bg-warm-100,
+.dark .bg-slate-100,
+.dark .bg-amber-50 {
+  background-color: #231a15;
+}
+
+.dark .border-warm-100,
+.dark .border-warm-200,
+.dark .border-slate-200,
+.dark .border-slate-300 {
+  border-color: #4a3a2f;
+}
+
+.dark .text-warm-900,
+.dark .text-slate-900,
+.dark .text-slate-800 {
+  color: #f3ece4;
+}
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-slate-500 {
+  color: #d6c5b7;
+}
+.dark .text-slate-400 {
+  color: #a8998a;
+}
+.dark .text-amber-700,
+.dark .text-amber-800 {
+  color: #fbbf24;
+}
+
+.dark input,
+.dark textarea,
+.dark select {
+  background-color: #1a1411;
+  color: #f3ece4;
+}
+.dark ::placeholder {
+  color: #8c7b6d;
+}

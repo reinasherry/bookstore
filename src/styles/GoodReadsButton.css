@@ -1,0 +1,23 @@
+
+.goodreads-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid #a66b32;
+  border-radius: 12px;
+  color: #895522;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.goodreads-button:hover {
+  background: #faf7f3;
+}
+
+.goodreads-icon {
+  width: 16px;
+  height: 16px;
+}

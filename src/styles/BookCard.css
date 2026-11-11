@@ -1,0 +1,205 @@
+
+/* Book Card */
+
+.book-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: white;
+  padding: 16px;
+  border: 1px solid #e8dfd6;
+  border-radius: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.book-card:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Wishlist */
+
+.wishlist-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  padding: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e8dfd6;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wishlist-button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.wishlist-button:hover {
+  color: #f43f5e;
+}
+
+.wishlist-button .heart-active {
+  fill: #f43f5e;
+  color: #f43f5e;
+}
+
+/* Book Information */
+
+.book-info {
+  cursor: pointer;
+}
+
+/* Cover */
+
+.book-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: #f5f0ea;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-cover img {
+  transform: scale(1.05);
+}
+
+/* Stock Status */
+
+.out-of-stock {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 4px 8px;
+  background: rgba(15, 23, 42, 0.85);
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* Genre */
+
+.book-genre {
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a66b32;
+  margin-bottom: 5px;
+}
+
+/* Title */
+
+.book-title {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #49372d;
+  margin-bottom: 5px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Author */
+
+.book-author {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Rating */
+
+.book-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.star-icon {
+  width: 14px;
+  height: 14px;
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.rating-number {
+  font-weight: bold;
+  color: #49372d;
+}
+
+.review-count {
+  color: #94a3b8;
+}
+
+/* Footer */
+
+.book-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid #eee7df;
+}
+
+.book-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #49372d;
+}
+
+/* Add Button */
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 12px;
+  background: #49372d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.add-button:hover:not(:disabled) {
+  background: #895522;
+}
+
+.add-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

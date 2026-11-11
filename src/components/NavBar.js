@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BookMarked, Search, Heart, ShoppingBag, Menu } from 'lucide-react';
 import '../styles/NavBar.css'; 
+import ThemeToggle from './Theme'
 
 const NavBar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,7 +42,7 @@ const NavBar = () => {
             </div>
             <div>
               <span className="logo-text">PageTurner</span>
-              <span className="logo-subtext">Curated Bookstore</span>
+              <span className="logo-subtext">Bookstore</span>
             </div>
           </Link>
 
@@ -70,7 +71,6 @@ const NavBar = () => {
                 <span className="badge badge-rose">{wishlistCount}</span>
               )}
             </button>
-
             <button className="cart-btn">
               <div className="cart-icon-wrapper">
                 <ShoppingBag size={20} />
