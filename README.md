@@ -1,16 +1,31 @@
-# React + Vite
+# PageTurner - Online Bookstore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive online bookstore built with React for CSCI426 (Advanced Web Programming)
+Users can browse and search books, view book details, save a wishlist, and manage a shopping cart.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Features
+- Browse a catalog of books loaded from the Open Library API
+- Live search across the Open Library collection
+- Filter by genre, price and stock, and sort results
+- Book detail page with description, ratings, reviews, and a link to Goodreads
+- Shopping cart with quantities
+- Wishlist
+- Light and dark mode
+- Responsive layout for desktop and mobile
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
+React, Vite, React Router, Tailwind CSS, lucide-react icons, Open Library API
 
-## Expanding the ESLint configuration
+## Setup
+1. Clone the repository: `git clone <https://github.com/reinasherry/bookstore.git>`
+2. Install dependencies: `npm install`
+3. Start the dev server: `npm run dev`
+4. Build for production: `npm run build`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Credits
+- Book data and covers: [Open Library](https://openlibrary.org)
+- Icons: [lucide](https://lucide.dev)
+- Styling: [Tailwind CSS](https://tailwindcss.com)
